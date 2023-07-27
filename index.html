@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sjviray's Color Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Uncomment this if you want to collect data for the model: -->
+    <!-- <input type="color" id="colorPicker">
+    <button id="red">Red</button>
+    <button id="orange">Orange<button>
+    <button id="yellow">Yellow</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+    <button id="purple">Purple</button>
+    <button id="pink">Pink</button>
+    <button id="black">Black</button>
+    <button id="white">White</button>
+    <button id="brown">Brown</button>
+    <button id="gray">Gray</button>
+    <button id="print">Print</button> -->
+
+    <form>  
+        <input type="text" id="redInput">
+        <input type="text" id="greenInput">
+        <input type="text" id="blueInput">
+
+    </form>  
+
+    <input type="color" id="colorInput" oninput="changeColor2()">
+
+
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+    <!-- Change to script.js to train the network: -->
+    <script src="script2.js"></script>
+</body>
+</html>
