@@ -13,6 +13,9 @@
     line-height: 2em;
     text-align: center;
 }
+#title dialog{
+  line-height: 2rem;
+}
 #content{
     display: flex;
     flex-direction: column;
@@ -60,7 +63,7 @@ form{
 
 
 /* CSS */
-.calculate {
+button {
   background: #fff;
   backface-visibility: hidden;
   border-radius: .375rem;
@@ -87,19 +90,19 @@ form{
   margin-top: 30px;
 }
 
-.calculate:not(:disabled):hover {
+button:not(:disabled):hover {
   transform: scale(1.05);
 }
 
-.calculate:not(:disabled):hover:active {
+button:not(:disabled):hover:active {
   transform: scale(1.05) translateY(.125rem);
 }
 
-.calculate:focus {
+button:focus {
   outline: 0 solid transparent;
 }
 
-.calculate:focus:before {
+button:focus:before {
   content: "";
   left: calc(-1*.375rem);
   pointer-events: none;
@@ -109,15 +112,15 @@ form{
   user-select: none;
 }
 
-.calculate:focus:not(:focus-visible) {
+button:focus:not(:focus-visible) {
   outline: 0 solid transparent;
 }
 
-.calculate:focus:not(:focus-visible):before {
+button:focus:not(:focus-visible):before {
   border-width: 0;
 }
 
-.calculate:not(:disabled):active {
+button:not(:disabled):active {
   transform: translateY(.125rem);
 }
 
@@ -126,4 +129,15 @@ form{
     font-size: 1.5rem;
     margin-top: 10vh;
     line-height: 1.5em;
+}
+
+.modal {
+  width: min(90vw, 600px);
+  height: min(70vh, 600px);
+}
+
+.modal div {
+  color: blue;
+  font-size: 1.5rem;
+  font-family: 'BIZ UDPMincho';
 }

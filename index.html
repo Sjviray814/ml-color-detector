@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=BIZ UDPMincho' rel='stylesheet'>
+    <link rel="shortcut icon" href="paintbrush.jpg" type="image/x-icon">
 </head>
 <body>
     <!-- Uncomment this if you want to collect data for the model: -->
@@ -26,7 +27,22 @@
     <button id="print">Print</button> -->
 
     <div id="content">
-        <div id="title">Sjviray's AI Color Detector</div>
+        <div id="title">Sjviray's AI Color Detector 
+            
+
+            <button data-open-modal>About</button>
+                <dialog  data-modal class="modal">
+                    <div>Hello and welcome to my machine-learning color classifier!  There are approximately 16,777,216 possible hexadecimal colors available.  After training on a dataset of just over 100 of these colors (Using a dataset which I prepared myself), this model can classify colors within 95% accuracy.  
+
+                        <br><br><br>Note:
+                        <br><br>
+                        This model struggles with identifying Black, White and Gray.  The possible classifcations are: Red, Orange, Yellow, Green, Blue, Purple, Pink, Brown, Black, White, Gray.
+
+                    </div>
+                    <button data-close-modal> Close</button>
+                    <a href="https://github.com/Sjviray814/golf-distance-calculator" target="_blank"><button id="source">Source Code</button></a>
+                </dialog>
+        </div>
 
 
         <div id="forms">
@@ -58,7 +74,7 @@
 
     </div>
 
-
+    <script src="modal.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
 
     <!-- Change to script.js to train the network: -->
