@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sjviray's Color Detector</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=BIZ UDPMincho' rel='stylesheet'>
-    <link rel="shortcut icon" href="paintbrush.jpg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sjviray's Color Detector</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=BIZ UDPMincho' rel='stylesheet'>
+  <link rel="shortcut icon" href="paintbrush.jpg" type="image/x-icon">
 </head>
+
 <body>
-    <!-- Uncomment this if you want to collect data for the model: -->
-    <!-- <input type="color" id="colorPicker">
+  <!-- Uncomment this if you want to collect data for the model: -->
+  <!-- <input type="color" id="colorPicker">
     <button id="red">Red</button>
     <button id="orange">Orange<button>
     <button id="yellow">Yellow</button>
@@ -26,58 +28,63 @@
     <button id="gray">Gray</button>
     <button id="print">Print</button> -->
 
-    <div id="content">
-        <div id="title">Sjviray's AI Color Detector 
-            
+  <div id="content">
+    <div id="title">Sjviray's AI Color Detector <br>
 
-            <button data-open-modal>About</button>
-                <dialog  data-modal class="modal">
-                    <div>Hello and welcome to my machine-learning color classifier!  There are approximately 16,777,216 possible hexadecimal colors available.  After training on a dataset of just over 100 of these colors (Using a dataset which I prepared myself), this model can classify colors within 95% accuracy.  
 
-                        <br><br><br>Note:
-                        <br><br>
-                        This model struggles with identifying Black, White and Gray.  The possible classifcations are: Red, Orange, Yellow, Green, Blue, Purple, Pink, Brown, Black, White, Gray.
+      <button data-open-modal>About</button>
+      <dialog data-modal class="modal">
+        <div>Hello and welcome to my machine-learning color classifier! There are approximately 16,777,216 possible
+          hexadecimal colors available. After training on a dataset of just over 100 of these colors (Using a dataset
+          which I prepared myself), this model can classify colors within 95% accuracy.
 
-                    </div>
-                    <button data-close-modal> Close</button>
-                    <a href="https://github.com/Sjviray814/golf-distance-calculator" target="_blank"><button id="source">Source Code</button></a>
-                </dialog>
+          <br><br><br>Note:
+          <br><br>
+          This model struggles with identifying Black, White and Gray. The possible classifications are: Red, Orange,
+          Yellow, Green, Blue, Purple, Pink, Brown, Black, White, Gray.
+
         </div>
-
-
-        <div id="forms">
-        <form>  
-            <div class="title">Please put your RGB color values below:</div>
-            <label>Red Color Value:</label>
-            <input type="text" id="redInput">
-
-            <label>Green Color Value:</label>
-            <input type="text" id="greenInput">
-
-            <label>Blue Color Value:</label>
-            <input type="text" id="blueInput">
-
-        </form>  
-        
-        <form class="color">
-            
-            <div class="title">Or select a color using the color selector:</div>
-            
-            <input type="color" id="colorInput" value="#FFFFFF" oninput="changeColor2()">
-        
-            
-            <button class="calculate" type="button" onclick="classify()">Calculate!</button>
-            <div id="answer">I think your color is... </div>
-        </form>
-        
+        <button data-close-modal> Close</button>
+        <a href="https://github.com/Sjviray814/ml-color-detector" target="_blank"><button id="source">Source
+            Code</button></a>
+      </dialog>
     </div>
 
+
+    <div id="forms">
+      <form>
+        <div class="title">Please put your RGB color values below:</div>
+        <label>Red Color Value:</label>
+        <input type="text" id="redInput">
+
+        <label>Green Color Value:</label>
+        <input type="text" id="greenInput">
+
+        <label>Blue Color Value:</label>
+        <input type="text" id="blueInput">
+
+      </form>
+
+      <form class="color">
+
+        <div class="title">Or select a color using the color selector:</div>
+
+        <input type="color" id="colorInput" value="#FFFFFF" oninput="changeColor2()">
+
+
+        <button class="calculate" type="button" onclick="classify()">Calculate!</button>
+        <div id="answer">I think your color is... </div>
+      </form>
+
     </div>
 
-    <script src="modal.js"></script>
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  </div>
 
-    <!-- Change to script.js to train the network: -->
-    <script src="script2.js"></script>
+  <script src="modal.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+  <!-- Change to script.js to train the network: -->
+  <script src="script2.js"></script>
 </body>
+
 </html>

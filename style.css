@@ -1,64 +1,74 @@
-#colorPicker{
-    width:100px;
-    height:100px;
-}
-*{
-    font-family: 'BIZ UDPMincho';
+#colorPicker {
+  width: 100px;
+  height: 100px;
 }
 
-#title{
-    font-size: 3.5rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 2em;
-    text-align: center;
+* {
+  font-family: 'BIZ UDPMincho';
 }
-#title dialog{
+
+#title {
+  font-size: 3.5rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 2em;
+  text-align: center;
+}
+
+#title dialog {
   line-height: 2rem;
 }
-#content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:min(150px, 20vh);
-    padding-top: 3vh;
-}
-input, label {
-    display:block;
-}
-label{
-    font-size:2rem;
-    margin-bottom: min(1vh, 10px);
+
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: min(100px, 20vh);
+  padding-top: 3vh;
 }
 
-#redInput, #greenInput, #blueInput{
-    margin-bottom: min(3vh, 30px);
-    width: min(80vw, 600px);
-    height: 40px;
+input,
+label {
+  display: block;
 }
 
-#forms{
-    display: flex;
-    gap: 10vw;
-    flex-wrap: wrap;
+label {
+  font-size: 2rem;
+  margin-bottom: min(1vh, 10px);
 }
 
-#colorInput{
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    padding: 10px;
+#redInput,
+#greenInput,
+#blueInput {
+  margin-bottom: min(3vh, 30px);
+  width: min(80vw, 600px);
+  height: 40px;
 }
 
-.title{
-    font-size: 2em;
-    padding-bottom: min(5vh, 40px);
+#forms {
+  display: flex;
+  gap: 10vw;
+  flex-wrap: wrap;
 }
-form{
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+
+#colorInput {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.title {
+  font-size: 2em;
+  padding-bottom: min(5vh, 40px);
+}
+
+form {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -73,7 +83,7 @@ button {
   color: #212121;
   cursor: pointer;
   display: inline-block;
-  font-family: Circular,Helvetica,sans-serif;
+  font-family: Circular, Helvetica, sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -.01em;
@@ -125,10 +135,10 @@ button:not(:disabled):active {
 }
 
 
-#answer{
-    font-size: 1.5rem;
-    margin-top: 10vh;
-    line-height: 1.5em;
+#answer {
+  font-size: 1.5rem;
+  margin-top: 10vh;
+  line-height: 1.5em;
 }
 
 .modal {
