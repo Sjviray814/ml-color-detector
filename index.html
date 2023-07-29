@@ -7,6 +7,7 @@
     <title>Sjviray's Color Detector</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=BIZ UDPMincho' rel='stylesheet'>
 </head>
 <body>
     <!-- Uncomment this if you want to collect data for the model: -->
@@ -24,14 +25,38 @@
     <button id="gray">Gray</button>
     <button id="print">Print</button> -->
 
-    <form>  
-        <input type="text" id="redInput">
-        <input type="text" id="greenInput">
-        <input type="text" id="blueInput">
+    <div id="content">
+        <div id="title">Sjviray's AI Color Detector</div>
 
-    </form>  
 
-    <input type="color" id="colorInput" oninput="changeColor2()">
+        <div id="forms">
+        <form>  
+            <div class="title">Please put your RGB color values below:</div>
+            <label>Red Color Value:</label>
+            <input type="text" id="redInput">
+
+            <label>Green Color Value:</label>
+            <input type="text" id="greenInput">
+
+            <label>Blue Color Value:</label>
+            <input type="text" id="blueInput">
+
+        </form>  
+        
+        <form class="color">
+            
+            <div class="title">Or select a color using the color selector:</div>
+            
+            <input type="color" id="colorInput" value="#FFFFFF" oninput="changeColor2()">
+        
+            
+            <button class="calculate" type="button" onclick="classify()">Calculate!</button>
+            <div id="answer">I think your color is... </div>
+        </form>
+        
+    </div>
+
+    </div>
 
 
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>

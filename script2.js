@@ -1,17 +1,32 @@
+let answer = document.getElementById('answer');
+
 const options = {
     task: 'classification'
 }
 
 const nn = ml5.neuralNetwork(options);
 
-nn.load('./model.json', classify);
+nn.load('./model.json');
 
-function classify(){
-    // console.log(nn.classify({
-    //     r: 234/256, 
-    //     g: 190/256,
-    //     b: 46/256
-    // }))
+async function classify(){
+    nn.classify({
+        r: redInput.value/256, 
+        g: greenInput.value/256,
+        b: blueInput.value/256
+    }).then((arr) => {
+        let choice1 =  arr[0]
+        let choice2 = arr[1]
+
+        console.log(choice1)
+        console.log(choice2)
+
+        if(choice1.confidence > 0.85){
+          answer.innerHTML = `I think your color is ${choice1.label}, I am ${Math.floor(choice1.confidence*1000)/10}% sure`
+        }
+        else{
+          answer.innerHTML = `I think your color is ${choice1.label}, I am ${Math.floor(choice1.confidence*1000)/10}% sure,<br> I think your color could also be ${choice2.label}`
+        }
+    })
 }
 
 $("#redInput").on("change keyup paste", function(){
@@ -56,6 +71,7 @@ function changeColor(){
     document.body.style.backgroundColor = 'rgb(' + redInput.value + ', ' + greenInput.value + ', ' + blueInput.value + ')'; 
     $("#colorInput").val(rgbToHex(redInput.value, greenInput.value, blueInput.value));
     //rgbToHex(redInput.value, greenInput.value, blueInput.value)
+    convertTexts();
 }
 
 function changeColor2(){
@@ -64,4 +80,13 @@ function changeColor2(){
     redInput.value = rgb.r;
     greenInput.value = rgb.g;
     blueInput.value = rgb.b;
+    convertTexts();
 }
+
+
+function convertTexts(){
+    let textColor = redInput.value * .299 + greenInput.value * .587 + blueInput.value * .114 <= 120 ? "#FFFFFF" : "#000000";
+    document.body.style.color = textColor;
+}
+
+
